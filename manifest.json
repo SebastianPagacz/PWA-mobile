@@ -1,0 +1,8 @@
+{
+    "name": "Nasz aplikacja",
+    "start_url": "/",
+    "background_color": "#fcfcfd",
+    "theme_color": "#7379a4",
+    "icons": [],
+    "display": "standalone"
+}
