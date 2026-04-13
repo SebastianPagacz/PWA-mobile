@@ -1,8 +1,15 @@
 {
-    "name": "Nasz aplikacja",
+    "name": "Debi Tirar Mas Fotos",
+    "short_name": "DTMF",
     "start_url": "/",
     "background_color": "#fcfcfd",
     "theme_color": "#7379a4",
-    "icons": [],
+    "icons": [
+        {
+            "src": "src/img/icons/dtmf_icon.png",
+            "type": "img/png",
+            "size": "512x512"
+        }
+    ],
     "display": "standalone"
 }

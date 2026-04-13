@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTMF</title>
+    <link rel="stylesheet" href="src/css/style.css">
     <link rel="manifest" href="manifest.json">
-    <title>First App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <script>
-        if('serviceWorker' in navigator){
-            navigator.serviceWorker.register('/service-worker.js');
-        }
-    </script>
+    <header>
+        <a class="logo" href="#">📷🌍</a>
+        <div class="menu-links-container">
+            <a href="#" class="menu-item">Home</a>
+            <a href="#" class="menu-item">Folders</a>
+            <a href="#" class="menu-item">About Us</a>
+        </div>
+    </header>
+    <main>
+        <div class="grid-container">
+            <h2>DTMF</h2>
+            <h4>Add new folder</h4>
+            <a class="main-btn folder-btn" href="#">📂</a>
+            <h4>Take a photo</h4>
+            <a class="main-btn camera-btn" href="#">📷</a>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
 </body>
 </html>
