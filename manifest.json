@@ -6,9 +6,20 @@
     "theme_color": "#7379a4",
     "icons": [
         {
-            "src": "src/img/icons/dtmf_icon.png",
-            "type": "img/png",
-            "size": "512x512"
+            "src": "icon/logo-500x500.avif",
+            "sizes": "500x500",
+            "type": "image/avif"
+        },
+        {
+            "src": "icon/dtmf_icon.png",
+            "sizes": "2048x2048",
+            "type": "image/png"
+        },
+        {
+            "src": "icon/dtmf_icon_144x144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
         }
     ],
     "display": "standalone"

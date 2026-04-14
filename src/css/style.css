@@ -46,10 +46,11 @@ header{
 }
 
 .logo{
-    font-size: clamp(2rem, 5vw, 3rem);
-    text-decoration: none;
+    width: 60px;
+    padding: 5px;
     @media(min-width: 1025px){
-        padding-left: 10px;
+        padding: 10px;
+        width: 80px;
     }
 }
 
@@ -78,14 +79,17 @@ main{
 }
 
 main a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     color: black;
     font-size: clamp(3em, 5vh, 4em);
     transition: 200ms;
     border: 1px solid rgb(142, 190, 229);
-    padding: 5px 20px 5px 20px;
+    padding: 10px;
     border-radius: 6px;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
 }
 
 main a:hover{
@@ -104,5 +108,12 @@ main a:hover{
     @media(min-width: 1024px){
         grid-column: 1;
         grid-row: 3;
+    }
+}
+
+.grid-container img{
+    width: 5vh;
+    @media(min-width: 1024px){
+        width: 10vh;
     }
 }
