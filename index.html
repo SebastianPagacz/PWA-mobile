@@ -27,6 +27,15 @@
             <h4>Take a photo</h4>
             <a class="main-btn camera-btn" href="#"><img src="src\img\icons\camera-icon.avif" alt="Camera"></a>
         </div>
+        <div id="camera-container" style="display: none; flex-direction: column; align-items: center; margin-top: 30px; gap: 15px;">
+            <video id="video-stream" autoplay playsinline style="width: 90%; max-width: 400px; border-radius: 10px; border: 2px solid #5bba2b;"></video>
+            
+            <button id="snap-btn" style="padding: 15px 30px; background-color: #5bba2b; color: white; border: none; border-radius: 8px; font-size: 1.2rem; cursor: pointer;">Snap!</button>
+            
+            <canvas id="photo-canvas" style="display: none;"></canvas>
+            
+            <img id="photo-preview" style="display: none; width: 90%; max-width: 400px; border-radius: 10px;" alt="Twoje zdjęcie">
+        </div>
     </main>
     <footer>
 
