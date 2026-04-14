@@ -117,3 +117,10 @@ main a:hover{
         width: 10vh;
     }
 }
+
+.folder-input{
+    @media(min-width: 1024px){
+        grid-column: 1;
+        grid-row: 4;
+    }
+}

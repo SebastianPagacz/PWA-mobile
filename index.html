@@ -23,7 +23,8 @@
         <div class="grid-container">
             <h2>DTMF</h2>
             <h4>Add new folder</h4>
-            <a class="main-btn folder-btn" href="#"><img src="src\img\icons\folder-icon.avif" alt="Folder"></a>
+            <a class="main-btn folder-btn" id="folderBtn"><img src="src\img\icons\folder-icon.avif" alt="Folder"></a>
+            <input type="text" class="folder-input" id="folderName" placeholder="Folder name">
             <h4>Take a photo</h4>
             <a class="main-btn camera-btn" href="#"><img src="src\img\icons\camera-icon.avif" alt="Camera"></a>
         </div>
@@ -32,5 +33,7 @@
 
     </footer>
     <script type="module" src="src/js/main.js"></script>
+    <script type="module" src="src/js/folders.js"></script>
+    <script src="src/js/localforage.js"></script>
 </body>
 </html>
