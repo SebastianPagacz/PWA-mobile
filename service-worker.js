@@ -27,8 +27,8 @@ self.addEventListener("install", (e) => {
 self.addEventListener("fetch", (e) => {
     e.respondWith(
         caches.match(e.request, {ignoreSearch: true}).then(response => {
-            console.log(response);
             return response || fetch(e.request);
         })
-    )
-})
+    );
+});
+
