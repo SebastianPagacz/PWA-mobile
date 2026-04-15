@@ -2,7 +2,7 @@ const cacheName = "dtmf_cache";
 const cachedItems = [
     "/",
     "manifest.json",
-    "/index.html",
+    "index.html",
     "src/css/style.css",
     "src/js/main.js",
     "src/js/localforage.js",
