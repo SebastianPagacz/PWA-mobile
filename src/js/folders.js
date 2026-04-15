@@ -11,3 +11,12 @@ export async function createFolder(folderName){
     console.log(`${folderName} album was created`);
     await localforage.setItem('folders', folders);
 }
+
+export async function getFolders(){
+    const folders = await localforage.getItem('folders');
+    
+    if(!folders)
+        return [];
+
+    return Object.keys(folders);
+}

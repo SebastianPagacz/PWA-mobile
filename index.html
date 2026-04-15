@@ -27,6 +27,7 @@
             <input type="text" class="folder-input" id="folderName" placeholder="Folder name">
             <h4>Take a photo</h4>
             <a class="main-btn camera-btn" href="#"><img src="src\img\icons\camera-icon.avif" alt="Camera"></a>
+            <div class="folders-container" id="foldersContainer"></div>
         </div>
         <div id="camera-container" style="display: none; flex-direction: column; align-items: center; margin-top: 30px; gap: 15px;">
             <video id="video-stream" autoplay playsinline style="width: 90%; max-width: 400px; border-radius: 10px; border: 2px solid #5bba2b;"></video>
@@ -43,6 +44,8 @@
     </footer>
     <script type="module" src="src/js/main.js"></script>
     <script type="module" src="src/js/folders.js"></script>
+    <script type="module" src="src/js/db.js"></script>
+    <script type="module" src="src/js/ui.js"></script>
     <script src="src/js/localforage.js"></script>
 </body>
 </html>

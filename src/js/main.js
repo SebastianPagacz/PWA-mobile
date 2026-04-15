@@ -1,4 +1,6 @@
-import { createFolder } from "./folders.js";
+import { createFolder, getFolders } from "./folders.js";
+import { initDb } from "./db.js";
+import { renderFolders } from "./ui.js";
 
 const init = async () => {
     let swRegistration = null;
@@ -11,22 +13,20 @@ const init = async () => {
             });
     }
 
-    async function initDb(){
-        let folders = await localforage.getItem('folders');
-        if (!folders){
-            folders = {};
-            await localforage.setItem('folders', folders);
-            return folders;
-        }
-    }
-
     initDb();
 
+    
     const folderBtn = document.getElementById('folderBtn');
+    const foldersContainer = document.getElementById('foldersContainer');
+    
+    const folders = await getFolders();
+    renderFolders(folders, foldersContainer);
 
-    folderBtn.addEventListener('click', () => {
+    folderBtn.addEventListener('click', async () => {
         const folderName = document.getElementById('folderName').value;
-        createFolder(folderName);
+        await createFolder(folderName);
+        const folders = await getFolders();
+        renderFolders(folders, foldersContainer);
     });
 
     const cameraBtn = document.querySelector('.camera-btn');
@@ -61,7 +61,6 @@ const init = async () => {
         photoPreview.src = photoData;
         photoPreview.style.display = 'block';
     });
-
 }
 
 document.addEventListener("DOMContentLoaded", init);
