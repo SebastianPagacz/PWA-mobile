@@ -60,6 +60,38 @@ const init = async () => {
         const photoData = canvas.toDataURL('image/jpeg');
         photoPreview.src = photoData;
         photoPreview.style.display = 'block';
+
+        const mapContainer = document.getElementById('map-container');
+        
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+                    
+                    mapContainer.style.display = 'block';
+                    
+                    if (window.myMap) {
+                        window.myMap.setView([lat, lng], 15);
+                        window.myMarker.setLatLng([lat, lng]);
+                    } else {
+                        window.myMap = L.map('map').setView([lat, lng], 15);
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '© OpenStreetMap contributors'
+                        }).addTo(window.myMap);
+                        window.myMarker = L.marker([lat, lng]).addTo(window.myMap);
+                    }
+                    
+                    setTimeout(() => window.myMap.invalidateSize(), 100);
+                },
+                (err) => {
+                    console.error("GPS download error:", err);
+                    alert("Failed to retrieve GPS location. Please check if your browser has permissions!");
+                }
+            );
+        } else {
+            alert("Your browser does not support Geolocation.");
+        }
     });
 }
 
