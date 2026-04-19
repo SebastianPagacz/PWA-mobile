@@ -1,36 +1,40 @@
 import { getPhotosFromFolder } from './folders.js';
 
-export async function renderFolders(folders, container) {
+export async function renderFolders(folders, container, colClass = 'col-6') {
   container.innerHTML = '';
   if (!folders || folders.length === 0) return;
 
   for (const folder of folders) {
     const photos = await getPhotosFromFolder(folder);
 
+    const col = document.createElement('div');
+    col.classList.add(colClass);
+
     const folderContainer = document.createElement('div');
     folderContainer.classList.add('single-folder');
-    folderContainer.style.cursor = 'pointer';
 
-    const folderIcon = document.createElement('p');
+    const folderIcon = document.createElement('span');
     folderIcon.innerText = '📁';
     folderIcon.classList.add('folder-icon');
 
     const folderName = document.createElement('p');
+    folderName.classList.add('folder-name');
     folderName.innerText = folder;
 
     const photoCount = document.createElement('p');
+    photoCount.classList.add('folder-count');
     photoCount.innerText = `${photos.length} photo${photos.length !== 1 ? 's' : ''}`;
-    photoCount.style.fontSize = '0.75em';
-    photoCount.style.color = '#666';
 
     folderContainer.appendChild(folderIcon);
     folderContainer.appendChild(folderName);
     folderContainer.appendChild(photoCount);
-    container.appendChild(folderContainer);
-
     folderContainer.addEventListener('click', () => openFolderModal(folder, photos));
+
+    col.appendChild(folderContainer);
+    container.appendChild(col);
   }
 }
+
 function openFolderModal(folderName, photos) {
   const existing = document.getElementById('folder-modal');
   if (existing) existing.remove();
